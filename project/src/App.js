@@ -8,7 +8,6 @@ import Products from "./Component/Products";
 function App() {
   return (
     <>
-      {/* <Navbar /> */}
       <BrowserRouter>
         <Routes>
           <Route path="/Home" element={<Home />}></Route>

@@ -5,8 +5,6 @@ const Contact = () => {
     <>
       <Navbar />
       <h1>Contact</h1>
-
-      <Login />
     </>
   );
 };

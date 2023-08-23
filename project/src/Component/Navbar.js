@@ -1,4 +1,3 @@
-import * as React from "react";
 import { useNavigate } from "react-router-dom";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -8,10 +7,10 @@ import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 
-export default function ButtonAppBar() {
+const Navbar = () => {
   const navigate = useNavigate();
 
-  // console.log("dhgchfhd", navigate);
+  console.log("dhgchfhd", navigate);
   // const handleClick = () => {
   //   navigate("/Profile");
   //   console.log("gbhbgfugktyujmgyu");
@@ -60,4 +59,5 @@ export default function ButtonAppBar() {
       </AppBar>
     </Box>
   );
-}
+};
+export default Navbar;
