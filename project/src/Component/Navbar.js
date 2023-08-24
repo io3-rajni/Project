@@ -10,10 +10,10 @@ import MenuIcon from "@mui/icons-material/Menu";
 const Navbar = () => {
   const navigate = useNavigate();
 
-  console.log("dhgchfhd", navigate);
+  // console.log("dhgchfhd", navigate);
   // const handleClick = () => {
   //   navigate("/Profile");
-  //   console.log("gbhbgfugktyujmgyu");
+  //   // console.log("gbhbgfugktyujmgyu");
   // };
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -54,7 +54,9 @@ const Navbar = () => {
               {/* <li>Home</li> */}
             </Box>
           </Typography>
-          <Button color="inherit">Login</Button>
+          {/* <Button color="inherit" onClick={handleClick}>
+            Login
+          </Button> */}
         </Toolbar>
       </AppBar>
     </Box>

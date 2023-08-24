@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { styled } from "@mui/material/styles";
 import Grid from "@mui/material/Grid";
@@ -11,16 +11,38 @@ import Navbar from "./Navbar";
 import TextField from "@mui/material/TextField";
 import Box from "@mui/material/Box";
 const Home = () => {
+  const navigate = useNavigate("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  // const [value, setValue] = useState("");
+  // const [validName, setValidName] = useState("");
+  const handleFirstName = (e) => {
+    setFirstName(e?.target?.value);
+  };
+  console.log("First Name", firstName);
+  const handleLastName = (e) => {
+    setLastName(e?.target?.value);
+  };
+
+  // console.log("Last Name"), lastName;
   const Img = styled("img")({
     margin: "auto",
     display: "block",
     maxWidth: "100%",
     maxHeight: "100%",
   });
-  const navigate = useNavigate();
   const handleLogin = () => {
     navigate("/Login");
+    console.log("dfgykop");
   };
+  // const handleLogin = (e) => {
+  //   e.preventDefault();
+  //   if (validName) {
+  //     setValidName("");
+  //     console.log("email1", validName);
+  //   } else {
+  //   }
+  // };
   return (
     <>
       <Navbar />
@@ -55,23 +77,29 @@ const Home = () => {
               placeholder="Your First Name"
               multiline
               maxRows={4}
+              value={firstName}
+              onChange={handleFirstName}
             />
+            {/* <Typography sx={{ color: "red" }}>{validName}</Typography> */}
             <TextField
               id="outlined-textarea"
               label="Last Name"
               placeholder="Your Last Name"
               multiline
+              value={lastName}
+              onChange={handleLastName}
             />
           </Box>
-          <Grid item xs={12} sm container>
-            <Typography sx={{ cursor: "pointer" }} variant="body2">
-              <Stack spacing={2} direction="row" sx={{ flexGrow: 1 }}>
-                <Button variant="contained" onClick={handleLogin}>
-                  Login
-                </Button>
-              </Stack>
-            </Typography>
-          </Grid>
+        </Grid>
+        <Grid item xs={12} sm container>
+          <Typography sx={{ cursor: "pointer" }}>
+            <Stack direction="row">
+              <Button variant="contained" onClick={handleLogin}>
+                Submit
+                {/* {value} */}
+              </Button>
+            </Stack>
+          </Typography>
         </Grid>
       </Paper>
     </>
