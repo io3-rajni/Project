@@ -1,20 +1,20 @@
 import { useNavigate } from "react-router-dom";
+
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 
-const Navbar = () => {
+const Navbar = (props) => {
+  const { setOpenLoginDialog } = props;
   const navigate = useNavigate();
 
-  // console.log("dhgchfhd", navigate);
-  // const handleClick = () => {
-  //   navigate("/Profile");
-  //   // console.log("gbhbgfugktyujmgyu");
-  // };
+  const handleLogin = () => {
+    setOpenLoginDialog(true);
+    navigate("/Login");
+  };
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
@@ -45,18 +45,13 @@ const Navbar = () => {
                 justifyContent: "space-evenly",
               }}
             >
-              {/* <li onClick={handleClick}>rajni</li> */}
               <li onClick={() => navigate("/Home")}>Home</li>
-              <li onClick={() => navigate("/Login")}>Login</li>
+              <li onClick={handleLogin}>Login</li>
               <li onClick={() => navigate("/Profile")}>Profile</li>
               <li onClick={() => navigate("/Products")}>Products</li>
               <li onClick={() => navigate("/Contact")}>Contact</li>
-              {/* <li>Home</li> */}
             </Box>
           </Typography>
-          {/* <Button color="inherit" onClick={handleClick}>
-            Login
-          </Button> */}
         </Toolbar>
       </AppBar>
     </Box>

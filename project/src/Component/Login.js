@@ -1,57 +1,58 @@
-import React from "react";
-import Navbar from "./Navbar";
+import * as React from "react";
+import Box from "@mui/material/Box";
+import Card from "@mui/material/Card";
+import CardActions from "@mui/material/CardActions";
+import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
-import Dialog from "@mui/material/Dialog";
-import DialogActions from "@mui/material/DialogActions";
-import DialogContent from "@mui/material/DialogContent";
-import DialogContentText from "@mui/material/DialogContentText";
-import DialogTitle from "@mui/material/DialogTitle";
-import useMediaQuery from "@mui/material/useMediaQuery";
-import { useTheme } from "@mui/material/styles";
+import Typography from "@mui/material/Typography";
 
+import Navbar from "./Navbar";
+import { useState } from "react";
+import LoginDialog from "./LoginDialog";
 const Login = () => {
-  const [open, setOpen] = React.useState(false);
-  const theme = useTheme();
-  const fullScreen = useMediaQuery(theme.breakpoints.down("md"));
-
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
+  const [openLoginDialog, setOpenLoginDialog] = useState(false);
+  const bull = (
+    <Box
+      component="span"
+      sx={{ display: "inline-block", mx: "2px", transform: "scale(0.8)" }}
+    >
+      •
+    </Box>
+  );
   return (
     <>
-      <Navbar />
-
-      <Button variant="outlined" onClick={handleClickOpen}>
-        Open responsive dialog
-      </Button>
-      <Dialog
-        fullScreen={fullScreen}
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="responsive-dialog-title"
+      <Navbar setOpenLoginDialog={setOpenLoginDialog} />
+      <LoginDialog
+        setOpenLoginDialog={setOpenLoginDialog}
+        openLoginDialog={openLoginDialog}
+      />
+      <Card
+        sx={{ width: "35%", height: "35ch", marginTop: "8%", margin: "auto" }}
       >
-        <DialogTitle id="responsive-dialog-title">
-          {"Use Google's location service?"}
-        </DialogTitle>
-        <DialogContent>
-          <DialogContentText>
-            Let Google help apps determine location. This means sending
-            anonymous location data to Google, even when no apps are running.
-          </DialogContentText>
-        </DialogContent>
-        <DialogActions>
-          <Button autoFocus onClick={handleClose}>
-            Disagree
-          </Button>
-          <Button onClick={handleClose} autoFocus>
-            Agree
-          </Button>
-        </DialogActions>
-      </Dialog>
+        <CardContent>
+          <Typography
+            sx={{ color: "#161635", textShadow: "1px 2px 3px #36535a" }}
+            color="text.secondary"
+            // gutterBottom
+            variant="h5"
+          >
+            DETAILS
+          </Typography>
+          <Typography variant="h6" component="div">
+            FIRST NAME :
+          </Typography>
+          <Typography variant="h6" component="div">
+            LAST NAME :
+          </Typography>
+          <br />
+          <Typography variant="body2">
+            Please Check Your Detail Carefully
+          </Typography>
+        </CardContent>
+        <CardActions>
+          <Button size="small">Submit</Button>
+        </CardActions>
+      </Card>
     </>
   );
 };

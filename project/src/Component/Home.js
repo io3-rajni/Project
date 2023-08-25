@@ -10,7 +10,7 @@ import Button from "@mui/material/Button";
 import Navbar from "./Navbar";
 import TextField from "@mui/material/TextField";
 import Box from "@mui/material/Box";
-const Home = () => {
+const Home = (props) => {
   const navigate = useNavigate("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -32,6 +32,7 @@ const Home = () => {
     maxHeight: "100%",
   });
   const handleLogin = () => {
+    // setOpenLoginDialog(true);
     navigate("/Login");
     console.log("dfgykop");
   };
@@ -96,7 +97,6 @@ const Home = () => {
             <Stack direction="row">
               <Button variant="contained" onClick={handleLogin}>
                 Submit
-                {/* {value} */}
               </Button>
             </Stack>
           </Typography>

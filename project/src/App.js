@@ -5,9 +5,11 @@ import Profile from "./Component/Profile";
 import Login from "./Component/Login";
 import Contact from "./Component/Contact";
 import Products from "./Component/Products";
+// import Navbar from "./Component/Navbar";
 function App() {
   return (
     <>
+      {/* <Navbar /> */}
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />}></Route>
