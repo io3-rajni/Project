@@ -10,7 +10,7 @@ import Navbar from "./Navbar";
 import { useState } from "react";
 import LoginDialog from "./LoginDialog";
 const Login = () => {
-  const [openLoginDialog, setOpenLoginDialog] = useState(false);
+  const [openLoginDialog, setOpenLoginDialog] = useState({});
   const bull = (
     <Box
       component="span"
@@ -19,12 +19,17 @@ const Login = () => {
       •
     </Box>
   );
+  const handleLoginDialog = (data) => {
+    setOpenLoginDialog(data);
+    console.log("Login Data", data);
+  };
   return (
     <>
       <Navbar setOpenLoginDialog={setOpenLoginDialog} />
       <LoginDialog
         setOpenLoginDialog={setOpenLoginDialog}
         openLoginDialog={openLoginDialog}
+        handleLoginDialog={handleLoginDialog}
       />
       <Card
         sx={{ width: "35%", height: "35ch", marginTop: "8%", margin: "auto" }}
@@ -38,12 +43,17 @@ const Login = () => {
           >
             DETAILS
           </Typography>
-          <Typography variant="h6" component="div">
-            FIRST NAME :
-          </Typography>
-          <Typography variant="h6" component="div">
-            LAST NAME :
-          </Typography>
+          <ul>
+            <Typography variant="h6" component="div">
+              <li>FIRST NAME :</li>
+            </Typography>
+            <Typography variant="h6" component="div">
+              <li>LAST NAME :{openLoginDialog?.email}</li>
+            </Typography>
+            <Typography variant="h6" component="div">
+              <li>EMAIL :{openLoginDialog?.email}</li>
+            </Typography>
+          </ul>
           <br />
           <Typography variant="body2">
             Please Check Your Detail Carefully

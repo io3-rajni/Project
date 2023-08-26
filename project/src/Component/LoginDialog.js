@@ -15,17 +15,17 @@ import SendIcon from "@mui/icons-material/Send";
 import { Password } from "@mui/icons-material";
 
 const LoginDialog = (props) => {
-  const { openLoginDialog, setOpenLoginDialog } = props;
+  const { openLoginDialog, setOpenLoginDialog, handleLoginDialog } = props;
   const [firstName, setFirstName] = React.useState("");
   const [lastName, setLastName] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
-  const [submitData, setSubmitData] = React.useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    password: "",
-  });
+  // const [submitData, setSubmitData] = React.useState({
+  //   firstName: "",
+  //   lastName: "",
+  //   email: "",
+  //   password: "",
+  // });
   // const navigate = useNavigate();
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down("md"));
@@ -50,23 +50,23 @@ const LoginDialog = (props) => {
     console.log("Password", password);
   };
   const handleSubmit = () => {
-    setSubmitData({
+    handleLoginDialog({
       firstName: firstName,
       lastName: lastName,
       email: email,
       password: password,
     });
   };
-  console.log(submitData);
-  const handleRefresh = () => {
-    setSubmitData({
-      firstName: "",
-      lastName: "",
-      email: "",
-      password: "",
-    });
-  };
-  console.log(submitData);
+  // console.log(submitData);
+  // const handleRefresh = () => {
+  //   setSubmitData({
+  //     firstName: "",
+  //     lastName: "",
+  //     email: "",
+  //     password: "",
+  //   });
+  // };
+  // console.log(submitData);
   return (
     <>
       <Dialog
@@ -137,7 +137,7 @@ const LoginDialog = (props) => {
           <Button
             variant="outlined"
             startIcon={<DeleteIcon />}
-            onClick={handleRefresh}
+            // onClick={handleRefresh}
           >
             Refresh
           </Button>
