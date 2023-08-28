@@ -1,10 +1,10 @@
 import React from "react";
-// import Navbar from "./Navbar";
+import ProfileDialog from "./ProfileDialog";
+
 const Profile = () => {
   return (
     <>
-      {/* <Navbar /> */}
-      <h1>Profile</h1>
+      <h1>lfvjkd</h1>
     </>
   );
 };
