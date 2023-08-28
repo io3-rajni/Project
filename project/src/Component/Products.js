@@ -1,9 +1,9 @@
 import React from "react";
-import Navbar from "./Navbar";
+// import Navbar from "./Navbar";
 const Products = () => {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <h1>Products</h1>
     </>
   );

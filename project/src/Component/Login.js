@@ -1,16 +1,18 @@
 import * as React from "react";
+import { useNavigate } from "react-router-dom";
 import Box from "@mui/material/Box";
+import { useState } from "react";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-
-import Navbar from "./Navbar";
-import { useState } from "react";
 import LoginDialog from "./LoginDialog";
-const Login = () => {
-  const [openLoginDialog, setOpenLoginDialog] = useState({});
+const Login = (props) => {
+  const navigate = useNavigate();
+  const { openLoginDialog, setOpenLoginDialog } = props;
+  const [loginData, setLoginData] = useState({});
+
   const bull = (
     <Box
       component="span"
@@ -20,17 +22,20 @@ const Login = () => {
     </Box>
   );
   const handleLoginDialog = (data) => {
-    setOpenLoginDialog(data);
+    setLoginData(data);
     console.log("Login Data", data);
+  };
+  const handleNext = () => {
+    navigate("/Profile");
   };
   return (
     <>
-      <Navbar setOpenLoginDialog={setOpenLoginDialog} />
       <LoginDialog
         setOpenLoginDialog={setOpenLoginDialog}
         openLoginDialog={openLoginDialog}
         handleLoginDialog={handleLoginDialog}
       />
+
       <Card
         sx={{ width: "35%", height: "35ch", marginTop: "8%", margin: "auto" }}
       >
@@ -43,24 +48,30 @@ const Login = () => {
           >
             DETAILS
           </Typography>
-          <ul>
-            <Typography variant="h6" component="div">
-              <li>FIRST NAME :</li>
-            </Typography>
-            <Typography variant="h6" component="div">
-              <li>LAST NAME :{openLoginDialog?.email}</li>
-            </Typography>
-            <Typography variant="h6" component="div">
-              <li>EMAIL :{openLoginDialog?.email}</li>
-            </Typography>
-          </ul>
+
+          <Typography variant="h6" component="div">
+            FIRST NAME :{loginData?.firstName}
+          </Typography>
+          <Typography variant="h6" component="div">
+            LAST NAME :{loginData?.lastName}
+          </Typography>
+          <Typography variant="h6" component="div">
+            EMAIL :{loginData?.email}
+          </Typography>
+
           <br />
           <Typography variant="body2">
             Please Check Your Detail Carefully
           </Typography>
         </CardContent>
         <CardActions>
-          <Button size="small">Submit</Button>
+          <Button
+            variant="contained"
+            href="#contained-buttons"
+            onClick={handleNext}
+          >
+            Next
+          </Button>
         </CardActions>
       </Card>
     </>

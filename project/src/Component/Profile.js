@@ -1,9 +1,9 @@
 import React from "react";
-import Navbar from "./Navbar";
+// import Navbar from "./Navbar";
 const Profile = () => {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <h1>Profile</h1>
     </>
   );

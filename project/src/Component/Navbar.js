@@ -13,7 +13,7 @@ const Navbar = (props) => {
 
   const handleLogin = () => {
     setOpenLoginDialog(true);
-    navigate("/Login");
+    // navigate("/Login");
   };
   return (
     <Box sx={{ flexGrow: 1 }}>

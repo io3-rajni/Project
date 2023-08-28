@@ -1,5 +1,5 @@
 import * as React from "react";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
@@ -20,16 +20,9 @@ const LoginDialog = (props) => {
   const [lastName, setLastName] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
-  // const [submitData, setSubmitData] = React.useState({
-  //   firstName: "",
-  //   lastName: "",
-  //   email: "",
-  //   password: "",
-  // });
-  // const navigate = useNavigate();
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down("md"));
-
+  const navigate = useNavigate();
   const handleClose = () => {
     setOpenLoginDialog(false);
   };
@@ -56,17 +49,13 @@ const LoginDialog = (props) => {
       email: email,
       password: password,
     });
+    setOpenLoginDialog(false);
   };
-  // console.log(submitData);
-  // const handleRefresh = () => {
-  //   setSubmitData({
-  //     firstName: "",
-  //     lastName: "",
-  //     email: "",
-  //     password: "",
-  //   });
-  // };
-  // console.log(submitData);
+  const handleRefresh = () => {
+    setFirstName("");
+    setLastName("");
+    setEmail("");
+  };
   return (
     <>
       <Dialog
@@ -137,7 +126,7 @@ const LoginDialog = (props) => {
           <Button
             variant="outlined"
             startIcon={<DeleteIcon />}
-            // onClick={handleRefresh}
+            onClick={handleRefresh}
           >
             Refresh
           </Button>

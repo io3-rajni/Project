@@ -7,10 +7,10 @@ import Typography from "@mui/material/Typography";
 import ButtonBase from "@mui/material/ButtonBase";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
-import Navbar from "./Navbar";
+// import Navbar from "./Navbar";
 import TextField from "@mui/material/TextField";
 import Box from "@mui/material/Box";
-const Home = (props) => {
+const Home = () => {
   const navigate = useNavigate("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -46,7 +46,7 @@ const Home = (props) => {
   // };
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <Paper
         sx={{
           p: 2,
@@ -96,7 +96,7 @@ const Home = (props) => {
           <Typography sx={{ cursor: "pointer" }}>
             <Stack direction="row">
               <Button variant="contained" onClick={handleLogin}>
-                Submit
+                Login
               </Button>
             </Stack>
           </Typography>
