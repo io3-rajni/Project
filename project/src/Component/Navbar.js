@@ -47,7 +47,7 @@ const Navbar = (props) => {
             >
               <li onClick={() => navigate("/Home")}>Home</li>
               <li onClick={handleLogin}>Login</li>
-              <li onClick={() => navigate("/Profile")}>Profile</li>
+              <li onClick={handleProfile}>Profile</li>
               <li onClick={() => navigate("/Products")}>Products</li>
               <li onClick={() => navigate("/Contact")}>Contact</li>
             </Box>
