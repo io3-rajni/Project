@@ -9,11 +9,15 @@ import MenuIcon from "@mui/icons-material/Menu";
 
 const Navbar = (props) => {
   const { setOpenLoginDialog } = props;
+  const[]
   const navigate = useNavigate();
 
   const handleLogin = () => {
     setOpenLoginDialog(true);
     // navigate("/Login");
+  };
+  const handleProfile = () => {
+    console.log("Profile");
   };
   return (
     <Box sx={{ flexGrow: 1 }}>
