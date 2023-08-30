@@ -11,28 +11,28 @@ import { useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 
-const ProfileDialog = () => {
-  const [open, setOpen] = React.useState(false);
+const ProfileDialog = (props) => {
+  const { openProfileDialog, setOpenProfileDialog } = props;
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down("md"));
 
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
+  // const handleClickOpen = () => {
+  //   setOpenProfileDialog(true);
+  // };
 
   const handleClose = () => {
-    setOpen(false);
+    setOpenProfileDialog(false);
   };
 
   return (
     <>
-      <Button variant="outlined" onClick={handleClickOpen}>
+      {/* <Button variant="outlined" onClick={handleClickOpen}>
         Open responsive dialog
-      </Button>
+      </Button> */}
       <Dialog
         fullScreen={fullScreen}
-        open={open}
-        onClose={handleClose}
+        open={openProfileDialog}
+        // onClose={handleClose}
         aria-labelledby="responsive-dialog-title"
       >
         <DialogTitle id="responsive-dialog-title">

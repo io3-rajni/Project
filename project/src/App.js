@@ -9,14 +9,26 @@ import Products from "./Component/Products";
 import Navbar from "./Component/Navbar";
 function App() {
   const [openLoginDialog, setOpenLoginDialog] = useState(false);
+  const [openProfileDialog, setOpenProfileDialog] = useState(false);
   return (
     <>
-      <Navbar setOpenLoginDialog={setOpenLoginDialog} />
+      <Navbar
+        setOpenLoginDialog={setOpenLoginDialog}
+        setOpenProfileDialog={setOpenProfileDialog}
+      />
 
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/Home" element={<Home />}></Route>
-        <Route path="/Profile" element={<Profile />}></Route>
+        <Route
+          path="/Profile"
+          element={
+            <Profile
+              openProfileDialog={openProfileDialog}
+              setOpenProfileDialog={setOpenProfileDialog}
+            />
+          }
+        ></Route>
         <Route
           path="/Login"
           element={

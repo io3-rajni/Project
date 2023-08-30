@@ -1,11 +1,14 @@
 import React from "react";
 import ProfileDialog from "./ProfileDialog";
 
-const Profile = () => {
+const Profile = (props) => {
+  const { openProfileDialog, setOpenProfileDialog } = props;
   return (
     <>
-      <ProfileDialog />
-      <h1>lfvjkd</h1>
+      <ProfileDialog
+        openProfileDialog={openProfileDialog}
+        setOpenProfileDialog={setOpenProfileDialog}
+      />
     </>
   );
 };

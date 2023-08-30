@@ -6,10 +6,11 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
+import { useState } from "react";
 
 const Navbar = (props) => {
-  const { setOpenLoginDialog } = props;
-  const[]
+  const { setOpenLoginDialog, setOpenProfileDialog } = props;
+
   const navigate = useNavigate();
 
   const handleLogin = () => {
@@ -17,6 +18,7 @@ const Navbar = (props) => {
     // navigate("/Login");
   };
   const handleProfile = () => {
+    setOpenProfileDialog(true);
     console.log("Profile");
   };
   return (
