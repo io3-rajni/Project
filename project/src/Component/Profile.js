@@ -2,16 +2,20 @@ import React from "react";
 import ProfileDialog from "./ProfileDialog";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import { Button, CardActionArea, CardActions } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 const Profile = (props) => {
   const { openProfileDialog, setOpenProfileDialog } = props;
+  const navigate = useNavigate();
+  const handleNext = () => {
+    navigate("/Products");
+  };
   return (
     <>
       <Grid item xs={12} md={6}>
-        <Card sx={{ maxWidth: 400, margin: "auto", marginTop: "10%" }}>
+        <Card sx={{ maxWidth: 400, margin: "auto", marginTop: "8%" }}>
           <CardActionArea>
             {/* <CardMedia component="img" height="140" /> */}
             <img
@@ -20,18 +24,19 @@ const Profile = (props) => {
               style={{ height: "17rem" }}
             />
             <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-                Lizard
+              <Typography gutterBottom variant="h4" component="div">
+                Congratulation
               </Typography>
-              <Typography variant="body2" color="text.secondary">
-                Lizards are a widespread group of squamate reptiles, with over
-                6,000 species, ranging across all continents except Antarctica
+              <Typography variant="h6" color="text.secondary">
+                You have successfully create Profile page ,now you can enter
+                Products page ,and now click on next button and go to Product
+                page,.
               </Typography>
             </CardContent>
           </CardActionArea>
           <CardActions>
-            <Button size="small" color="primary">
-              Share
+            <Button size="medium" color="primary" onClick={handleNext}>
+              Next
             </Button>
           </CardActions>
         </Card>
