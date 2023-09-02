@@ -12,9 +12,11 @@ import Stack from "@mui/material/Stack";
 
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
+import { useNavigate } from "react-router-dom";
 
 const ProfileDialog = (props) => {
   const [firstName, setFirstName] = React.useState("");
+  const navigate = useNavigate();
   const [lastName, setLastName] = React.useState("");
   const [number, setNumber] = React.useState("");
   const [email, setEmail] = React.useState("");
@@ -35,7 +37,9 @@ const ProfileDialog = (props) => {
   const { openProfileDialog, setOpenProfileDialog } = props;
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down("md"));
-
+  const handleClose = () => {
+    setOpenProfileDialog(false);
+  };
   const handleFirstName = (e) => {
     setFirstName(e?.target?.value);
     console.log("first name", firstName);
@@ -80,10 +84,19 @@ const ProfileDialog = (props) => {
       state: state,
       district: district,
     });
+    setOpenProfileDialog(false);
+    // navigate("/Profile");
+    console.log("Submit", submit);
   };
   const handleClear = () => {
-    firstName("");
-    lastName("");
+    setFirstName("");
+    setLastName("");
+    setEmail("");
+    setNumber("");
+    setPassword("");
+    setAddress("");
+    setDistrict("");
+    setState("");
 
     setOpenProfileDialog(false);
   };
@@ -92,6 +105,7 @@ const ProfileDialog = (props) => {
       <Dialog
         fullScreen={fullScreen}
         open={openProfileDialog}
+        onClose={handleClose}
         aria-labelledby="responsive-dialog-title"
       >
         <DialogTitle id="responsive-dialog-title">
