@@ -6,15 +6,18 @@ import Profile from "./Component/Profile";
 import Login from "./Component/Login";
 import Contact from "./Component/Contact";
 import Products from "./Component/Products";
+import Practice from "./Component/Parctice";
 import Navbar from "./Component/Navbar";
 function App() {
   const [openLoginDialog, setOpenLoginDialog] = useState(false);
   const [openProfileDialog, setOpenProfileDialog] = useState(false);
+  const [ProductsDialogOpen, setProductDialogOpen] = useState(false);
   return (
     <>
       <Navbar
         setOpenLoginDialog={setOpenLoginDialog}
         setOpenProfileDialog={setOpenProfileDialog}
+        setProductDialogOpen={setProductDialogOpen}
       />
 
       <Routes>
@@ -38,8 +41,17 @@ function App() {
             />
           }
         ></Route>
-        <Route path="/Products" element={<Products />}></Route>
+        <Route
+          path="/Products"
+          element={
+            <Products
+              ProductsDialogOpen={ProductsDialogOpen}
+              setProductDialogOpen={setProductDialogOpen}
+            />
+          }
+        ></Route>
         <Route path="/Contact" element={<Contact />}></Route>
+        <Route path="/Practice" element={<Practice />}></Route>
       </Routes>
     </>
   );

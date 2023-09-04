@@ -9,7 +9,8 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { useState } from "react";
 
 const Navbar = (props) => {
-  const { setOpenLoginDialog, setOpenProfileDialog } = props;
+  const { setOpenLoginDialog, setOpenProfileDialog, setProductDialogOpen } =
+    props;
 
   const navigate = useNavigate();
 
@@ -20,6 +21,13 @@ const Navbar = (props) => {
   const handleProfile = () => {
     setOpenProfileDialog(true);
     console.log("Profile");
+  };
+  const handleProduct = () => {
+    setProductDialogOpen(true);
+    console.log("Products");
+  };
+  const handlePractice = () => {
+    navigate("/Practice");
   };
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -54,7 +62,8 @@ const Navbar = (props) => {
               <li onClick={() => navigate("/Home")}>Home</li>
               <li onClick={handleLogin}>Login</li>
               <li onClick={handleProfile}>Profile</li>
-              <li onClick={() => navigate("/Products")}>Products</li>
+              <li onClick={handleProduct}>Products</li>
+              <li onClick={handlePractice}>practice</li>
               <li onClick={() => navigate("/Contact")}>Contact</li>
             </Box>
           </Typography>

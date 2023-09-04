@@ -1,10 +1,13 @@
-import React from "react";
-// import Navbar from "./Navbar";
-const Products = () => {
+import React, { useState } from "react";
+import ProductsDialog from "./ProductsDialog";
+const Products = (props) => {
+  const { ProductsDialogOpen, setProductDialogOpen } = props;
   return (
     <>
-      {/* <Navbar /> */}
-      <h1>Products</h1>
+      <ProductsDialog
+        ProductsDialogOpen={ProductsDialogOpen}
+        setProductDialogOpen={setProductDialogOpen}
+      />
     </>
   );
 };
