@@ -6,7 +6,6 @@ import Profile from "./Component/Profile";
 import Login from "./Component/Login";
 import Contact from "./Component/Contact";
 import Products from "./Component/Products";
-import Practice from "./Component/Parctice";
 import Navbar from "./Component/Navbar";
 function App() {
   const [openLoginDialog, setOpenLoginDialog] = useState(false);
@@ -51,7 +50,6 @@ function App() {
           }
         ></Route>
         <Route path="/Contact" element={<Contact />}></Route>
-        <Route path="/Practice" element={<Practice />}></Route>
       </Routes>
     </>
   );

@@ -16,7 +16,6 @@ const Navbar = (props) => {
 
   const handleLogin = () => {
     setOpenLoginDialog(true);
-    // navigate("/Login");
   };
   const handleProfile = () => {
     setOpenProfileDialog(true);
@@ -26,9 +25,7 @@ const Navbar = (props) => {
     setProductDialogOpen(true);
     console.log("Products");
   };
-  const handlePractice = () => {
-    navigate("/Practice");
-  };
+  //
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
@@ -63,7 +60,7 @@ const Navbar = (props) => {
               <li onClick={handleLogin}>Login</li>
               <li onClick={handleProfile}>Profile</li>
               <li onClick={handleProduct}>Products</li>
-              <li onClick={handlePractice}>practice</li>
+
               <li onClick={() => navigate("/Contact")}>Contact</li>
             </Box>
           </Typography>
