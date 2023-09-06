@@ -1,6 +1,6 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
@@ -8,10 +8,26 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import LoginDialog from "./LoginDialog";
 import { Navigate, useNavigate } from "react-router-dom";
+import { setRef } from "@mui/material";
+import axios from "axios";
+
 const Login = (props) => {
   const navigate = useNavigate();
   const { openLoginDialog, setOpenLoginDialog } = props;
   const [loginData, setLoginData] = useState({});
+  const [apiData, setApiData] = useState([]);
+  console.log("dhf sdyfg", apiData);
+  useEffect(() => {
+    axios
+      .get("https://dummyjson.com/products")
+      .then((response) => {
+        setApiData(response);
+        console.log("response", response);
+      })
+      .catch((error) => {
+        console.log("error", error);
+      });
+  }, []);
 
   const bull = (
     <Box

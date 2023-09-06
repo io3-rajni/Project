@@ -8,9 +8,12 @@ import DialogActions from "@mui/material/DialogActions";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
 import Typography from "@mui/material/Typography";
+import { useNavigate } from "react-router-dom";
 
 const ProductsDialog = (props) => {
+  const navigate = useNavigate();
   const { setProductDialogOpen, ProductsDialogOpen } = props;
+
   const BootstrapDialog = styled(Dialog)(({ theme }) => ({
     "& .MuiDialogContent-root": {
       padding: theme.spacing(2),
@@ -22,7 +25,10 @@ const ProductsDialog = (props) => {
   const handleClose = () => {
     setProductDialogOpen(false);
   };
-
+  const handleLink = () => {
+    navigate("/Products");
+    setProductDialogOpen(false);
+  };
   return (
     <>
       <BootstrapDialog
@@ -47,9 +53,12 @@ const ProductsDialog = (props) => {
         </IconButton>
         <DialogContent dividers>
           <Typography gutterBottom>
-            Aenean lacinia bibendum nulla sed consectetur. Praesent commodo
-            cursus magna, vel scelerisque nisl consectetur et. Donec sed odio
-            dui. Donec ullamcorper nulla non metus auctor fringilla.
+            <Button>
+              <h1 onClick={handleLink}>
+                {/* <a href="https://dummyjson.com/users" /> */}
+                Link
+              </h1>
+            </Button>
           </Typography>
         </DialogContent>
         <DialogActions>
