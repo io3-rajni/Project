@@ -50,18 +50,19 @@ const Home = () => {
       <Paper
         sx={{
           p: 2,
-          margin: "auto",
+          margin: "100px auto",
           maxWidth: 600,
-          flexGrow: 1,
+          // flexGrow: 1,
           backgroundColor: (theme) =>
             theme.palette.mode === "dark" ? "#1A2027" : "#fff",
         }}
+        className="mt-3"
       >
-        <Grid container sx={{ marginTop: "10" }}>
-          <Grid item>
-            <ButtonBase sx={{ width: 600, height: 300 }}>
+        <Grid container sx={{ marginTop: "10px" }} className="mt-3">
+          <Grid item sx={12} md={12}>
+            <Box>
               <Typography variant="h3">Will Come To My Home Page</Typography>
-            </ButtonBase>
+            </Box>
           </Grid>
 
           <Box

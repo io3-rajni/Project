@@ -10,7 +10,7 @@ const Products = (props) => {
     axios
       .get("https://dummyjson.com/products")
       .then((response) => {
-        setApiData(response);
+        setApiData(response?.data?.products);
         console.log("response", response);
       })
       .catch((error) => {
