@@ -65,7 +65,7 @@ const Home = () => {
             </Box>
           </Grid>
 
-          <Box
+          {/* <Box
             component="form"
             sx={{
               "& .MuiTextField-root": { m: 1, width: "25ch" },
@@ -82,7 +82,6 @@ const Home = () => {
               value={firstName}
               onChange={handleFirstName}
             />
-            {/* <Typography sx={{ color: "red" }}>{validName}</Typography> */}
             <TextField
               id="outlined-textarea"
               label="Last Name"
@@ -91,7 +90,7 @@ const Home = () => {
               value={lastName}
               onChange={handleLastName}
             />
-          </Box>
+          </Box> */}
         </Grid>
         <Grid item xs={12} sm container>
           <Typography sx={{ cursor: "pointer" }}>
