@@ -32,7 +32,7 @@ const Navbar = (props) => {
     console.log("Products");
   };
   // to get data from local storage
-  const localStorageData = localStorage?.getItem("isLogin");
+  const localStorageData = localStorage?.getItem("firstName");
   return (
     <>
       <LoginDialog
