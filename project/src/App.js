@@ -14,6 +14,7 @@ function App() {
   return (
     <>
       <Navbar
+        openLoginDialog={openLoginDialog}
         setOpenLoginDialog={setOpenLoginDialog}
         setOpenProfileDialog={setOpenProfileDialog}
         setProductDialogOpen={setProductDialogOpen}

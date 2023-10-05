@@ -14,19 +14,6 @@ const Login = (props) => {
   const navigate = useNavigate();
   const { openLoginDialog, setOpenLoginDialog } = props;
   const [loginData, setLoginData] = useState({});
-  // const [apiData, setApiData] = useState([]);
-  // console.log("dhf sdyfg", apiData);
-  // useEffect(() => {
-  //   axios
-  //     .get("https://dummyjson.com/products")
-  //     .then((response) => {
-  //       setApiData(response);
-  //       console.log("response", response);
-  //     })
-  //     .catch((error) => {
-  //       console.log("error", error);
-  //     });
-  // }, []);
 
   const bull = (
     <Box

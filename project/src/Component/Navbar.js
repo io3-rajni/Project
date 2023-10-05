@@ -8,10 +8,15 @@ import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useState } from "react";
 import { Grid } from "@mui/material";
+import LoginDialog from "./LoginDialog";
 
 const Navbar = (props) => {
-  const { setOpenLoginDialog, setOpenProfileDialog, setProductDialogOpen } =
-    props;
+  const {
+    openLoginDialog,
+    setOpenLoginDialog,
+    setOpenProfileDialog,
+    setProductDialogOpen,
+  } = props;
 
   const navigate = useNavigate();
 
@@ -28,48 +33,71 @@ const Navbar = (props) => {
   };
   //
   return (
-    <Grid sx={12} md={6}>
-      <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="static">
-          <Toolbar>
-            <IconButton
-              size="large"
-              edge="start"
-              color="inherit"
-              aria-label="menu"
-              sx={{ mr: 2 }}
-            >
-              <MenuIcon />
-            </IconButton>
-            <Typography
-              variant="h6"
-              component="div"
-              sx={{
-                flexGrow: 1,
-                display: { xs: "none", md: "flex" },
-                listStyleType: "none",
-                // justifyContent: "space-evenly",
-              }}
-            >
-              <Box
+    <>
+      <LoginDialog
+        openLoginDialog={openLoginDialog}
+        setOpenLoginDialog={setOpenLoginDialog}
+      />
+      <Grid sx={12} md={6}>
+        <Box sx={{ flexGrow: 1 }}>
+          <AppBar position="static">
+            <Toolbar>
+              {/* <IconButton
+                size="large"
+                edge="start"
+                color="inherit"
+                aria-label="menu"
+                sx={{ mr: 2 }}
+              >
+                <MenuIcon />
+              </IconButton> */}
+              <Typography
+                variant="h6"
+                component="div"
                 sx={{
-                  display: "flex",
-                  width: "40%",
-                  justifyContent: "space-evenly",
+                  flexGrow: 1,
+                  display: { xs: "none", md: "flex" },
+                  listStyleType: "none",
+                  // justifyContent: "space-evenly",
                 }}
               >
-                <li onClick={() => navigate("/Home")}>Home</li>
-                <li onClick={handleLogin}>Login</li>
-                <li onClick={handleProfile}>Profile</li>
-                <li onClick={handleProduct}>Products</li>
+                <Box
+                  sx={{
+                    display: "flex",
+                    width: "100%",
+                    // justifyContent: "space-evenly",
+                  }}
+                >
+                  <Box
+                    sx={{
+                      display: "flex",
+                      justifyContent: "space-around",
+                      width: "50%",
+                    }}
+                  >
+                    <li onClick={() => navigate("/Home")}>Home</li>
 
-                <li onClick={() => navigate("/Contact")}>Contact</li>
-              </Box>
-            </Typography>
-          </Toolbar>
-        </AppBar>
-      </Box>
-    </Grid>
+                    <li onClick={handleProfile}>Profile</li>
+                    <li onClick={handleProduct}>Products</li>
+
+                    <li onClick={() => navigate("/Contact")}>Contact</li>
+                  </Box>
+                  <Box
+                    sx={{
+                      display: "flex",
+                      justifyContent: "end",
+                      width: "50%",
+                    }}
+                  >
+                    <li onClick={handleLogin}>Login</li>
+                  </Box>
+                </Box>
+              </Typography>
+            </Toolbar>
+          </AppBar>
+        </Box>
+      </Grid>
+    </>
   );
 };
 export default Navbar;

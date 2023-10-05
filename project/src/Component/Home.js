@@ -10,8 +10,11 @@ import Button from "@mui/material/Button";
 // import Navbar from "./Navbar";
 import TextField from "@mui/material/TextField";
 import Box from "@mui/material/Box";
+import Login from "./Login";
+import LoginDialog from "./LoginDialog";
 const Home = () => {
   const navigate = useNavigate("");
+  const [openLoginDialog, setOpenLoginDialog] = useState(false);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   // const [value, setValue] = useState("");
@@ -32,8 +35,9 @@ const Home = () => {
     maxHeight: "100%",
   });
   const handleLogin = () => {
+    setOpenLoginDialog(true);
+    // navigate("/LoginDialog");
     // setOpenLoginDialog(true);
-    navigate("/Login");
     console.log("dfgykop");
   };
   // const handleLogin = (e) => {
@@ -46,6 +50,7 @@ const Home = () => {
   // };
   return (
     <>
+      
       {/* <Navbar /> */}
       <Paper
         sx={{
@@ -61,7 +66,7 @@ const Home = () => {
         <Grid container sx={{ marginTop: "10px" }} className="mt-3">
           <Grid item sx={12} md={12}>
             <Box>
-              <Typography variant="h3">Will Come To My Home Page</Typography>
+              <Typography variant="h3">Wel Come To My Home Page</Typography>
             </Box>
           </Grid>
 
@@ -92,7 +97,7 @@ const Home = () => {
             />
           </Box> */}
         </Grid>
-        <Grid item xs={12} sm container>
+        {/* <Grid item xs={12} sm container>
           <Typography sx={{ cursor: "pointer" }}>
             <Stack direction="row">
               <Button variant="contained" onClick={handleLogin}>
@@ -100,7 +105,7 @@ const Home = () => {
               </Button>
             </Stack>
           </Typography>
-        </Grid>
+        </Grid> */}
       </Paper>
     </>
   );
