@@ -7,7 +7,7 @@ import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useState } from "react";
-import { Grid } from "@mui/material";
+import { Avatar, Grid } from "@mui/material";
 import LoginDialog from "./LoginDialog";
 
 const Navbar = (props) => {
@@ -31,7 +31,8 @@ const Navbar = (props) => {
     setProductDialogOpen(true);
     console.log("Products");
   };
-  //
+  // to get data from local storage
+  const localStorageData = localStorage?.getItem("isLogin");
   return (
     <>
       <LoginDialog
@@ -89,7 +90,14 @@ const Navbar = (props) => {
                       width: "50%",
                     }}
                   >
-                    <li onClick={handleLogin}>Login</li>
+                    {localStorageData ? (
+                      <Avatar
+                        alt="Cindy Baker"
+                        src="/static/images/avatar/3.jpg"
+                      />
+                    ) : (
+                      <li onClick={handleLogin}>Login</li>
+                    )}
                   </Box>
                 </Box>
               </Typography>

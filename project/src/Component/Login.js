@@ -41,7 +41,7 @@ const Login = (props) => {
       <Card
         sx={{ width: "35%", height: "35ch", marginTop: "8%", margin: "auto" }}
       >
-        <CardContent>
+        {/* <CardContent>
           <Typography
             sx={{ color: "#161635", textShadow: "1px 2px 3px #36535a" }}
             color="text.secondary"
@@ -65,7 +65,7 @@ const Login = (props) => {
           <Typography variant="body2">
             Please Check Your Detail Carefully
           </Typography>
-        </CardContent>
+        </CardContent> */}
         <CardActions>
           <Button
             variant="contained"

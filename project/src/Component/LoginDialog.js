@@ -13,7 +13,7 @@ import SendIcon from "@mui/icons-material/Send";
 import { Password } from "@mui/icons-material";
 
 const LoginDialog = (props) => {
-  const { openLoginDialog, setOpenLoginDialog } = props;
+  const { openLoginDialog, setOpenLoginDialog, handleLoginDialog } = props;
   const [firstName, setFirstName] = React.useState("");
   const [lastName, setLastName] = React.useState("");
   const [email, setEmail] = React.useState("");
@@ -41,6 +41,20 @@ const LoginDialog = (props) => {
     console.log("Password", password);
   };
   const handleSubmit = () => {
+    localStorage.setItem("firstName", firstName);
+    localStorage.setItem("lastName", lastName);
+    localStorage.setItem("email", email);
+    localStorage.setItem("password", password);
+    localStorage.setItem("isLogin", true);
+    console.log(
+      "asfadsf",
+
+      firstName,
+      lastName,
+      email,
+      password
+    );
+
     // handleLoginDialog({
     //   firstName: firstName,
     //   lastName: lastName,
