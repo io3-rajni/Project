@@ -36,9 +36,6 @@ const Home = () => {
   });
   const handleLogin = () => {
     setOpenLoginDialog(true);
-    // navigate("/LoginDialog");
-    // setOpenLoginDialog(true);
-    console.log("dfgykop");
   };
   // const handleLogin = (e) => {
   //   e.preventDefault();
@@ -48,9 +45,9 @@ const Home = () => {
   //   } else {
   //   }
   // };
+
   return (
     <>
-      
       {/* <Navbar /> */}
       <Paper
         sx={{

@@ -18,12 +18,14 @@ const Navbar = (props) => {
     setProductDialogOpen,
   } = props;
 
+  const [childData, setChildData] = useState();
   const navigate = useNavigate();
 
   const handleLogin = () => {
     setOpenLoginDialog(true);
   };
   const handleProfile = () => {
+    localStorage.getItem("firstName");
     setOpenProfileDialog(true);
     console.log("Profile");
   };
@@ -32,12 +34,19 @@ const Navbar = (props) => {
     console.log("Products");
   };
   // to get data from local storage
-  const localStorageData = localStorage?.getItem("firstName");
+  const localStorageData = localStorage?.getItem("isLogin");
+  const fName = localStorage.getItem("firstName");
+
+  const findChildData = (data) => {
+    console.log("child data", data);
+    setChildData(data);
+  };
   return (
     <>
       <LoginDialog
         openLoginDialog={openLoginDialog}
         setOpenLoginDialog={setOpenLoginDialog}
+        findChildData={findChildData}
       />
       <Grid sx={12} md={6}>
         <Box sx={{ flexGrow: 1 }}>
@@ -76,12 +85,19 @@ const Navbar = (props) => {
                       width: "50%",
                     }}
                   >
-                    <li onClick={() => navigate("/Home")}>Home</li>
+                    {fName ? (
+                      <li>{fName}</li>
+                    ) : (
+                      <li onClick={() => navigate("/Home")}>Home</li>
+                    )}
 
                     <li onClick={handleProfile}>Profile</li>
                     <li onClick={handleProduct}>Products</li>
 
                     <li onClick={() => navigate("/Contact")}>Contact</li>
+                    <li>
+                      {childData} {fName}
+                    </li>
                   </Box>
                   <Box
                     sx={{
