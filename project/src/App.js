@@ -7,10 +7,14 @@ import Login from "./Component/Login";
 import Contact from "./Component/Contact";
 import Products from "./Component/Products";
 import Navbar from "./Component/Navbar";
+import { useNavigate } from "react-router-dom";
+
 function App() {
   const [openLoginDialog, setOpenLoginDialog] = useState(false);
   const [openProfileDialog, setOpenProfileDialog] = useState(false);
   const [ProductsDialogOpen, setProductDialogOpen] = useState(false);
+  const navigate = useNavigate();
+
   return (
     <>
       <Navbar
@@ -29,15 +33,6 @@ function App() {
             <Profile
               openProfileDialog={openProfileDialog}
               setOpenProfileDialog={setOpenProfileDialog}
-            />
-          }
-        ></Route>
-        <Route
-          path="/Login"
-          element={
-            <Login
-              openLoginDialog={openLoginDialog}
-              setOpenLoginDialog={setOpenLoginDialog}
             />
           }
         ></Route>

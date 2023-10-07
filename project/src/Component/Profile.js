@@ -9,9 +9,9 @@ import { useNavigate } from "react-router-dom";
 const Profile = (props) => {
   const { openProfileDialog, setOpenProfileDialog } = props;
   const navigate = useNavigate();
-  const handleNext = () => {
-    navigate("/Products");
-  };
+  // const handleNext = () => {
+  //   navigate("/Products");
+  // };
   return (
     <>
       <Grid item xs={12} md={6}>
@@ -35,9 +35,9 @@ const Profile = (props) => {
             </CardContent>
           </CardActionArea>
           <CardActions>
-            <Button size="medium" color="primary" onClick={handleNext}>
+            {/* <Button size="medium" color="primary" onClick={handleNext}>
               Next
-            </Button>
+            </Button> */}
           </CardActions>
         </Card>
       </Grid>
