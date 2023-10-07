@@ -13,6 +13,7 @@ function App() {
   const [openLoginDialog, setOpenLoginDialog] = useState(false);
   const [openProfileDialog, setOpenProfileDialog] = useState(false);
   const [ProductsDialogOpen, setProductDialogOpen] = useState(false);
+  const [openContact, setContactOpen] = useState(false);
   const navigate = useNavigate();
 
   return (
@@ -22,6 +23,7 @@ function App() {
         setOpenLoginDialog={setOpenLoginDialog}
         setOpenProfileDialog={setOpenProfileDialog}
         setProductDialogOpen={setProductDialogOpen}
+        setContactOpen={setContactOpen}
       />
 
       <Routes>
@@ -45,7 +47,15 @@ function App() {
             />
           }
         ></Route>
-        <Route path="/Contact" element={<Contact />}></Route>
+        <Route
+          path="/Contact"
+          element={
+            <Contact
+              openContact={openContact}
+              setContactOpen={setContactOpen}
+            />
+          }
+        ></Route>
       </Routes>
     </>
   );

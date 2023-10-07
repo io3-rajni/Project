@@ -16,6 +16,8 @@ const Navbar = (props) => {
     setOpenLoginDialog,
     setOpenProfileDialog,
     setProductDialogOpen,
+    // openContact,
+    setContactOpen,
   } = props;
 
   const [childData, setChildData] = useState();
@@ -42,6 +44,10 @@ const Navbar = (props) => {
   const findChildData = (data) => {
     console.log("child data", data);
     setChildData(data);
+  };
+  const handleContact = () => {
+    setContactOpen(true);
+    console.log("mndnf");
   };
   return (
     <>
@@ -87,7 +93,7 @@ const Navbar = (props) => {
                     <li onClick={handleProfile}>Profile</li>
                     <li onClick={handleProduct}>Products</li>
 
-                    <li onClick={() => navigate("/Contact")}>Contact</li>
+                    <li onClick={handleContact}>Contact</li>
                     <li>
                       {childData} {fName}
                     </li>
