@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import ContactDailog from "./ContactDailog";
 // import Navbar from "./Navbar";
-const Contact = () => {
-  const [contactOpen, setContactOpen] = useState(false);
+const Contact = (props) => {
+  const { openContact, setContactOpen } = props;
   return (
     <>
       <ContactDailog
-        contactOpen={contactOpen}
+        openContact={openContact}
         setContactOpen={setContactOpen}
       />
       {/* <Navbar /> */}

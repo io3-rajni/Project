@@ -46,6 +46,8 @@ const Navbar = (props) => {
     setChildData(data);
   };
   const handleContact = () => {
+    navigate("./contact");
+
     setContactOpen(true);
     console.log("mndnf");
   };

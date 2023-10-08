@@ -16,6 +16,7 @@ function App() {
   const [openContact, setContactOpen] = useState(false);
   const navigate = useNavigate();
 
+  console.log("openContact", openContact);
   return (
     <>
       <Navbar
