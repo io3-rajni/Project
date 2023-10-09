@@ -86,19 +86,16 @@ const Navbar = (props) => {
                       width: "50%",
                     }}
                   >
-                    {fName ? (
+                    {/* {fName ? (
                       <li>{fName}</li>
-                    ) : (
-                      <li onClick={() => navigate("/Home")}>Home</li>
-                    )}
+                    ) : ( */}
+                    <li onClick={() => navigate("/Home")}>Home</li>
+                    {/* )} */}
 
                     <li onClick={handleProfile}>Profile</li>
                     <li onClick={handleProduct}>Products</li>
 
                     <li onClick={handleContact}>Contact</li>
-                    <li>
-                      {childData} {fName}
-                    </li>
                   </Box>
                   <Box
                     sx={{
