@@ -37,7 +37,14 @@ const ContactDailog = (props) => {
   console.log("Clear", submit);
 
   const handleSubmit = () => {
-    sessionStorage.setItem("firstName", firstName);
+    localStorage.setItem(
+      "keys",
+      JSON.stringify({
+        firstName: firstName,
+        lastName: lastName,
+        email: email,
+      })
+    );
     localStorage.setItem("lastName", lastName);
     localStorage.setItem("email", email);
     setSubmit({ firstName: firstName, lastName: lastName, email: email });

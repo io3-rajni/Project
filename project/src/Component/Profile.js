@@ -8,7 +8,7 @@ import { Button, CardActionArea, CardActions } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 const Profile = (props) => {
   const { openProfileDialog, setOpenProfileDialog } = props;
-  const localStorageData = localStorage?.getItem("lastName");
+  const localStorageData = JSON.parse(localStorage?.getItem("keys"));
   console.log(localStorageData);
 
   const navigate = useNavigate();
@@ -38,7 +38,10 @@ const Profile = (props) => {
             </CardContent>
           </CardActionArea>
           <CardActions>
-            <li>{localStorageData}</li>
+            <li>{localStorageData?.firstName}</li>
+            <li>{localStorageData?.lastName}</li>
+            <li>{localStorageData?.email}</li>
+
             {/* <Button size="medium" color="primary" onClick={handleNext}>
               Next
             </Button> */}
