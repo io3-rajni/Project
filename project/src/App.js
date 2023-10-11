@@ -14,6 +14,7 @@ function App() {
   const [openProfileDialog, setOpenProfileDialog] = useState(false);
   const [ProductsDialogOpen, setProductDialogOpen] = useState(false);
   const [openContact, setContactOpen] = useState(false);
+
   const navigate = useNavigate();
 
   console.log("openContact", openContact);

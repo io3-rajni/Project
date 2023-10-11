@@ -12,6 +12,7 @@ import TextField from "@mui/material/TextField";
 import Box from "@mui/material/Box";
 import Login from "./Login";
 import LoginDialog from "./LoginDialog";
+import Dropdown from "./Dropdown";
 const Home = () => {
   const navigate = useNavigate("");
   const [openLoginDialog, setOpenLoginDialog] = useState(false);
@@ -104,6 +105,7 @@ const Home = () => {
           </Typography>
         </Grid> */}
       </Paper>
+      <Dropdown />
     </>
   );
 };

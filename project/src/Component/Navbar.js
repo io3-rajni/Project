@@ -105,10 +105,12 @@ const Navbar = (props) => {
                     }}
                   >
                     {localStorageData ? (
-                      <Avatar
-                        alt="Cindy Baker"
-                        src="/static/images/avatar/3.jpg"
-                      />
+                      <Box>
+                        <Avatar
+                          alt="Cindy Baker"
+                          src="/static/images/avatar/3.jpg"
+                        />
+                      </Box>
                     ) : (
                       <li onClick={handleLogin}>Login</li>
                     )}

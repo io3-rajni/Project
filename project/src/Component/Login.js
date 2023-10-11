@@ -9,7 +9,7 @@ import Typography from "@mui/material/Typography";
 import LoginDialog from "./LoginDialog";
 import { Navigate, useNavigate } from "react-router-dom";
 import axios from "axios";
-
+import Dropdown from "./Dropdown";
 const Login = (props) => {
   const navigate = useNavigate();
   const { openLoginDialog, setOpenLoginDialog } = props;
@@ -37,35 +37,34 @@ const Login = (props) => {
         openLoginDialog={openLoginDialog}
         handleLoginDialog={handleLoginDialog}
       />
-
       <Card
         sx={{ width: "35%", height: "35ch", marginTop: "8%", margin: "auto" }}
       >
         {/* <CardContent>
           <Typography
-            sx={{ color: "#161635", textShadow: "1px 2px 3px #36535a" }}
-            color="text.secondary"
-            // gutterBottom
-            variant="h5"
+          sx={{ color: "#161635", textShadow: "1px 2px 3px #36535a" }}
+          color="text.secondary"
+          // gutterBottom
+          variant="h5"
           >
-            DETAILS
+          DETAILS
           </Typography>
-
+          
           <Typography variant="h6" component="div">
-            FIRST NAME :{loginData?.firstName}
+          FIRST NAME :{loginData?.firstName}
           </Typography>
           <Typography variant="h6" component="div">
-            LAST NAME :{loginData?.lastName}
+          LAST NAME :{loginData?.lastName}
           </Typography>
           <Typography variant="h6" component="div">
             EMAIL :{loginData?.email}
-          </Typography>
-
-          <br />
-          <Typography variant="body2">
+            </Typography>
+            
+            <br />
+            <Typography variant="body2">
             Please Check Your Detail Carefully
-          </Typography>
-        </CardContent> */}
+            </Typography>
+          </CardContent> */}
         <CardActions>
           <Button
             variant="contained"
@@ -76,6 +75,7 @@ const Login = (props) => {
           </Button>
         </CardActions>
       </Card>
+      {/* <Dropdown /> */}
     </>
   );
 };
