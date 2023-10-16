@@ -10,17 +10,15 @@ const Profile = (props) => {
   const { openProfileDialog, setOpenProfileDialog } = props;
   const localStorageData = JSON.parse(localStorage?.getItem("keys"));
   console.log(localStorageData);
-
   const navigate = useNavigate();
-  // const handleNext = () => {
-  //   navigate("/Products");
-  // };
+  const handleNext = () => {
+    navigate("/Products");
+  };
   return (
     <>
       <Grid item xs={12} md={6}>
         <Card sx={{ maxWidth: 400, margin: "auto", marginTop: "8%" }}>
           <CardActionArea>
-            {/* <CardMedia component="img" height="140" /> */}
             <img
               src="https://www.askideas.com/media/13/Welcome-Picture.jpg"
               alt="link"
@@ -42,9 +40,9 @@ const Profile = (props) => {
             <li>{localStorageData?.lastName}</li>
             <li>{localStorageData?.email}</li>
 
-            {/* <Button size="medium" color="primary" onClick={handleNext}>
+            <Button size="medium" color="primary" onClick={handleNext}>
               Next
-            </Button> */}
+            </Button>
           </CardActions>
         </Card>
       </Grid>

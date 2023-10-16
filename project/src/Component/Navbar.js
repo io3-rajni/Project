@@ -12,11 +12,7 @@ import PersonAdd from "@mui/icons-material/PersonAdd";
 import Settings from "@mui/icons-material/Settings";
 import Logout from "@mui/icons-material/Logout";
 import AppBar from "@mui/material/AppBar";
-
 import Toolbar from "@mui/material/Toolbar";
-
-// import IconButton from "@mui/material/IconButton";
-// import MenuIcon from "@mui/icons-material/Menu";
 import { useState } from "react";
 import { Avatar, Grid } from "@mui/material";
 import LoginDialog from "./LoginDialog";
@@ -28,7 +24,7 @@ const Navbar = (props) => {
     setOpenLoginDialog,
     setOpenProfileDialog,
     setProductDialogOpen,
-    // openContact,
+
     setContactOpen,
   } = props;
 
@@ -90,14 +86,12 @@ const Navbar = (props) => {
                   flexGrow: 1,
                   display: { xs: "none", md: "flex" },
                   listStyleType: "none",
-                  // justifyContent: "space-evenly",
                 }}
               >
                 <Box
                   sx={{
                     display: "flex",
                     width: "100%",
-                    // justifyContent: "space-evenly",
                   }}
                 >
                   <Box

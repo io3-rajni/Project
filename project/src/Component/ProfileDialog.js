@@ -9,14 +9,13 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
 import Avatar from "@mui/material/Avatar";
 import Stack from "@mui/material/Stack";
-
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import { useNavigate } from "react-router-dom";
 
 const ProfileDialog = (props) => {
-  const [firstName, setFirstName] = React.useState("");
   const navigate = useNavigate();
+  const [firstName, setFirstName] = React.useState("");
   const [lastName, setLastName] = React.useState("");
   const [number, setNumber] = React.useState("");
   const [email, setEmail] = React.useState("");
