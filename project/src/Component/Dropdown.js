@@ -21,6 +21,10 @@ const Dropdown = () => {
   const handleClose = () => {
     setAnchorEl(null);
   };
+  const handleLogout = () => {
+    localStorage.setItem("isLogin", false);
+    document.location.reload();
+  };
   return (
     <React.Fragment>
       <Box sx={{ display: "flex", alignItems: "center", textAlign: "center" }}>
@@ -93,7 +97,7 @@ const Dropdown = () => {
           </ListItemIcon>
           Settings
         </MenuItem>
-        <MenuItem onClick={handleClose}>
+        <MenuItem onClick={handleLogout}>
           <ListItemIcon>
             <Logout fontSize="small" />
           </ListItemIcon>
