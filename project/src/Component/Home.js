@@ -105,7 +105,7 @@ const Home = () => {
           </Typography>
         </Grid> */}
       </Paper>
-      <Dropdown />
+      {/* <Dropdown /> */}
     </>
   );
 };

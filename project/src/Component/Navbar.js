@@ -1,14 +1,26 @@
+import React from "react";
 import { useNavigate } from "react-router-dom";
-
-import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import Divider from "@mui/material/Divider";
+import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
+import Tooltip from "@mui/material/Tooltip";
+import PersonAdd from "@mui/icons-material/PersonAdd";
+import Settings from "@mui/icons-material/Settings";
+import Logout from "@mui/icons-material/Logout";
+import AppBar from "@mui/material/AppBar";
+
+import Toolbar from "@mui/material/Toolbar";
+
 // import IconButton from "@mui/material/IconButton";
 // import MenuIcon from "@mui/icons-material/Menu";
 import { useState } from "react";
 import { Avatar, Grid } from "@mui/material";
 import LoginDialog from "./LoginDialog";
+import Dropdown from "./Dropdown";
 
 const Navbar = (props) => {
   const {
@@ -38,7 +50,7 @@ const Navbar = (props) => {
     console.log("Products");
   };
   // to get data from local storage
-  const localStorageData = localStorage?.getItem("isLogin");
+  const isLoginUser = localStorage?.getItem("isLogin");
   const fName = localStorage.getItem("firstName");
 
   const findChildData = (data) => {
@@ -50,6 +62,15 @@ const Navbar = (props) => {
 
     setContactOpen(true);
     console.log("mndnf");
+  };
+
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
   };
   return (
     <>
@@ -104,12 +125,14 @@ const Navbar = (props) => {
                       width: "50%",
                     }}
                   >
-                    {localStorageData ? (
+                    {isLoginUser === "true" ? (
                       <Box>
-                        <Avatar
+                        {/* <Avatar
                           alt="Cindy Baker"
                           src="/static/images/avatar/3.jpg"
-                        />
+                          onClick={openDropdown}
+                        /> */}
+                        <Dropdown />
                       </Box>
                     ) : (
                       <li onClick={handleLogin}>Login</li>
