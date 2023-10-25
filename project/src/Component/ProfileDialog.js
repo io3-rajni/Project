@@ -23,16 +23,16 @@ const ProfileDialog = (props) => {
   const [state, setState] = React.useState("");
   const [address, setAddress] = React.useState("");
   const [district, setDistrict] = React.useState("");
-  const [submit, setSubmit] = React.useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    password: "",
-    number: "",
-    address: "",
-    state: "",
-    district: "",
-  });
+  // const [submit, setSubmit] = React.useState({
+  //   firstName: "",
+  //   lastName: "",
+  //   email: "",
+  //   password: "",
+  //   number: "",
+  //   address: "",
+  //   state: "",
+  //   district: "",
+  // });
   const { openProfileDialog, setOpenProfileDialog } = props;
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down("md"));
@@ -53,7 +53,7 @@ const ProfileDialog = (props) => {
   };
   const handleEmail = (e) => {
     setEmail(e?.target?.value);
-    console.lob("Email", email);
+    console.log("Email", email);
   };
   const handlePassword = (e) => {
     setPassword(e?.target?.value);
@@ -73,19 +73,28 @@ const ProfileDialog = (props) => {
   };
 
   const handleSubmit = () => {
-    setSubmit({
-      firstName: firstName,
-      lastName: lastName,
-      number: number,
-      email: email,
-      password: password,
-      address: address,
-      state: state,
-      district: district,
-    });
+    localStorage.setItem("firstName", firstName);
+    localStorage.setItem("lastName", lastName);
+    localStorage.setItem("number", number);
+    localStorage.setItem("email", email);
+    localStorage.setItem("password", password);
+    localStorage.setItem("address", address);
+    localStorage.setItem("state", state);
+    localStorage.setItem("district", district);
+
     setOpenProfileDialog(false);
     // navigate("/Profile");
-    console.log("Submit", submit);
+    // console.log("Submit", submit);
+    console.log(
+      firstName,
+      lastName,
+      number,
+      email,
+      password,
+      address,
+      state,
+      district
+    );
   };
   const handleClear = () => {
     setFirstName("");

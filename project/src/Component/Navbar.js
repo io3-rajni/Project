@@ -48,6 +48,11 @@ const Navbar = (props) => {
   // to get data from local storage
   const isLoginUser = localStorage?.getItem("isLogin");
   const fName = localStorage.getItem("firstName");
+  const lName = localStorage.getItem("lastName");
+  const email = localStorage.getItem("email");
+  const password = localStorage.getItem("password");
+
+  console.log("Name", fName, lName, email, password);
 
   const findChildData = (data) => {
     console.log("child data", data);

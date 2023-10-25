@@ -16,17 +16,17 @@ import Dropdown from "./Dropdown";
 const Home = () => {
   const navigate = useNavigate("");
   const [openLoginDialog, setOpenLoginDialog] = useState(false);
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
+  // const [firstName, setFirstName] = useState("");
+  // const [lastName, setLastName] = useState("");
   // const [value, setValue] = useState("");
   // const [validName, setValidName] = useState("");
-  const handleFirstName = (e) => {
-    setFirstName(e?.target?.value);
-  };
-  console.log("First Name", firstName);
-  const handleLastName = (e) => {
-    setLastName(e?.target?.value);
-  };
+  // const handleFirstName = (e) => {
+  //   setFirstName(e?.target?.value);
+  // };
+  // console.log("First Name", firstName);
+  // const handleLastName = (e) => {
+  //   setLastName(e?.target?.value);
+  // };
 
   // console.log("Last Name"), lastName;
   const Img = styled("img")({

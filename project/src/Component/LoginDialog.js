@@ -47,12 +47,20 @@ const LoginDialog = (props) => {
     console.log("Password", password);
   };
   const handleSubmit = () => {
-    findChildData(firstName);
+    // findChildData(firstName);
     localStorage.setItem("firstName", firstName);
     localStorage.setItem("lastName", lastName);
     localStorage.setItem("email", email);
     localStorage.setItem("password", password);
     localStorage.setItem("isLogin", true);
+    localStorage.setItem(
+      "loginData",
+      JSON.stringify({
+        firstName: firstName,
+        lastName: lastName,
+        email: email,
+      })
+    );
     console.log(
       "asfadsf",
 
