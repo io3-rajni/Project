@@ -34,6 +34,7 @@ const Navbar = (props) => {
   const handleLogin = () => {
     setOpenLoginDialog(true);
   };
+  // localStorage.setItem('test', JSON.stringify('test name'))
   const handleProfile = () => {
     navigate("/profile");
     localStorage.getItem("firstName");
@@ -47,13 +48,13 @@ const Navbar = (props) => {
   };
   // to get data from local storage
   const isLoginUser = localStorage?.getItem("isLogin");
-  const fName = localStorage.getItem("firstName");
-  const lName = localStorage.getItem("lastName");
-  const email = localStorage.getItem("email");
-  const password = localStorage.getItem("password");
+  // const fName = localStorage.getItem("firstName");
+  // const lName = localStorage.getItem("lastName");
+  // const email = localStorage.getItem("email");
+  // const password = localStorage.getItem("password");
 
-  console.log("Name", fName, lName, email, password);
-
+  // console.log("Name", fName, lName, email, password);
+  console.log("login", isLoginUser);
   const findChildData = (data) => {
     console.log("child data", data);
     setChildData(data);
@@ -116,6 +117,7 @@ const Navbar = (props) => {
                     <li onClick={handleProduct}>Products</li>
 
                     <li onClick={handleContact}>Contact</li>
+                    {isLoginUser === "true" && <li>Add Cart</li>}
                   </Box>
                   <Box
                     sx={{
@@ -126,11 +128,6 @@ const Navbar = (props) => {
                   >
                     {isLoginUser === "true" ? (
                       <Box>
-                        {/* <Avatar
-                          alt="Cindy Baker"
-                          src="/static/images/avatar/3.jpg"
-                          onClick={openDropdown}
-                        /> */}
                         <Dropdown />
                       </Box>
                     ) : (

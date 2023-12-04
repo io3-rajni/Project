@@ -73,14 +73,27 @@ const ProfileDialog = (props) => {
   };
 
   const handleSubmit = () => {
-    localStorage.setItem("firstName", firstName);
-    localStorage.setItem("lastName", lastName);
-    localStorage.setItem("number", number);
-    localStorage.setItem("email", email);
-    localStorage.setItem("password", password);
-    localStorage.setItem("address", address);
-    localStorage.setItem("state", state);
-    localStorage.setItem("district", district);
+    // localStorage.setItem("firstName", firstName);
+    // localStorage.setItem("lastName", lastName);
+    // localStorage.setItem("number", number);
+    // localStorage.setItem("email", email);
+    // localStorage.setItem("password", password);
+    // localStorage.setItem("address", address);
+    // localStorage.setItem("state", state);
+    // localStorage.setItem("district", district);
+    localStorage.setItem(
+      "profileData",
+      JSON.stringify({
+        firstName: firstName,
+        lastName: lastName,
+        number: number,
+        email: email,
+        password: password,
+        address: address,
+        state: state,
+        district: district,
+      })
+    );
 
     setOpenProfileDialog(false);
     // navigate("/Profile");

@@ -48,10 +48,10 @@ const LoginDialog = (props) => {
   };
   const handleSubmit = () => {
     // findChildData(firstName);
-    localStorage.setItem("firstName", firstName);
-    localStorage.setItem("lastName", lastName);
-    localStorage.setItem("email", email);
-    localStorage.setItem("password", password);
+    // localStorage.setItem("firstName", firstName);
+    // localStorage.setItem("lastName", lastName);
+    // localStorage.setItem("email", email);
+    // localStorage.setItem("password", password);
     localStorage.setItem("isLogin", true);
     localStorage.setItem(
       "loginData",
@@ -59,6 +59,7 @@ const LoginDialog = (props) => {
         firstName: firstName,
         lastName: lastName,
         email: email,
+        // isLogin: true,
       })
     );
     console.log(

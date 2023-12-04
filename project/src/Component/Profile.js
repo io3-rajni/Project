@@ -8,8 +8,8 @@ import { Button, CardActionArea, CardActions } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 const Profile = (props) => {
   const { openProfileDialog, setOpenProfileDialog } = props;
-  const localStorageData = JSON.parse(localStorage?.getItem("loginData"));
-  console.log(localStorageData);
+  const localStorageData = JSON.parse(localStorage?.getItem("profileData"));
+  console.log("profile data", localStorageData);
   const navigate = useNavigate();
   const handleNext = () => {
     navigate("/Products");
